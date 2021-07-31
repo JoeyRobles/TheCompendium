@@ -1,0 +1,40 @@
+﻿<Window x:Class="Compendium.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Compendium"
+        mc:Ignorable="d"
+        Title="The Compendium" Height="844.822" Width="1170.3" ResizeMode="NoResize" FontSize="20" Icon="compendium.ico">
+    <Grid Margin="0,0,-6,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*" MaxWidth="600"/>
+            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="95*" MaxWidth="600"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="FileGrid" HorizontalAlignment="Left" Height="796" Margin="10,10,0,0" VerticalAlignment="Top" Width="669" AutoGenerateColumns="False" RowHeight="128" FontSize="24" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" Grid.ColumnSpan="3" SelectionChanged="FileGrid_SelectionChanged"/>
+        <Grid HorizontalAlignment="Left" Height="60" Margin="84,10,0,0" VerticalAlignment="Top" Width="470" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="38*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Open_Directory" Content="Open Directory" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="163" Height="40" Click="Open_Directory_Click" FontSize="20"/>
+            <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="178,10,0,0" VerticalAlignment="Top" Width="123" Height="40" FontSize="20" Click="Refresh_Click"/>
+        </Grid>
+        <Grid Grid.Column="2" HorizontalAlignment="Left" Height="731" Margin="84,75,0,0" VerticalAlignment="Top" Width="470">
+            <Label Content="Title" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
+            <Image x:Name="IconPreview" HorizontalAlignment="Left" Height="256" Margin="10,41,0,0" VerticalAlignment="Top" Width="256" OpacityMask="#FF8F8F8F"/>
+            <Label Content="Icon Preview" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="183" FontSize="20"/>
+            <TextBox x:Name="TitleTextBox" HorizontalAlignment="Right" Height="107" Margin="0,369,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301" TextAlignment="Right" TextChanged="TextBox_TextChanged" FontSize="20"/>
+            <Label Content="Color Label" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" Width="134" FontSize="20"/>
+            <ComboBox x:Name="ColorLabelList" HorizontalAlignment="Left" Margin="159,314,0,0" VerticalAlignment="Top" Width="301" Height="37" SelectionChanged="ColorLabelList_SelectionChanged" FontSize="20" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+            <Button x:Name="SaveChangesButton" Content="Save Changes" HorizontalAlignment="Left" Margin="271,481,0,0" VerticalAlignment="Top" Width="178" Height="47" FontSize="20" Click="SaveChangesButton_Click"/>
+            <Button x:Name="DiscardChangesButton" Content="Discard" HorizontalAlignment="Left" Margin="107,481,0,0" VerticalAlignment="Top" Width="159" Height="47" FontSize="20" Click="DiscardChangesButton_Click"/>
+            <Button x:Name="NewIconFromFileButton" Content="From File" HorizontalAlignment="Left" Margin="282,92,0,0" VerticalAlignment="Top" Width="178" FontSize="20" Height="44" Click="NewIconFromFileButton_Click"/>
+            <Button x:Name="NewIconFromClipboardButton" Content="From Clipboard" HorizontalAlignment="Left" Margin="282,141,0,0" VerticalAlignment="Top" Width="178" FontSize="20" Height="44" Click="NewIconFromClipboardButton_Click"/>
+            <Label Content="New Icon :" HorizontalAlignment="Left" Margin="282,61,0,0" VerticalAlignment="Top" Width="178"/>
+            <Button x:Name="OpenFolderButton" Content="Open Folder" HorizontalAlignment="Left" Margin="271,644,0,0" VerticalAlignment="Top" Width="178" Height="77" Click="OpenFolderButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
